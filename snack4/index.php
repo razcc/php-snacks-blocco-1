@@ -1,19 +1,24 @@
 <?php
 // Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 
-$array = [];
+$arrayVuoto = [];
 
-for ($i = 0; $i < 15; $i++) {
+for ($i = 0; count($arrayVuoto) < 15; $i++) {
     $numeroRandom = rand(1, 100);
 
-    if (!in_array($numeroRandom, $array)) {
-        $array[] = $numeroRandom;
+    if (!in_array($numeroRandom, $arrayVuoto)) {
+        $arrayVuoto[] = $numeroRandom;
     }
-    echo ($array[$i]);
-    echo '<br />';
 }
 
-var_dump($array)
+for ($k = 0; $k < count($arrayVuoto); $k++) {
+    echo $arrayVuoto[$k];
+    echo '<br />';
+
+}
+;
+
+var_dump($arrayVuoto);
 
 
-    ?>
+?>
