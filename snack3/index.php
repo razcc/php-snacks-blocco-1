@@ -41,11 +41,30 @@ $posts = [
     ],
 ];
 
-$keys = array_keys($posts);
-foreach ($keys as $key => $valore)
-    echo "$valore<br />";
+// var_dump($posts['10/01/2019']);
 
 
+$arrDate = array_keys($posts);
+
+// var_dump($arrDate);
+// echo ('<br/>');
+
+// var_dump($posts[$arrDate[0]]); // Stessa cosa che scrivere il commento sopra
+
+for ($i = 0; $i < count($posts); $i++) {
+    echo $arrDate[$i];
+    echo ('<br/>');
+
+    for ($k = 0; $k < count($posts[$arrDate[$i]]); $k++) {
+        echo $posts[$arrDate[$i]][$k]['title'];
+        echo ('<br/>');
+        echo ('<br/>');
+
+
+    }
+
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,17 +78,7 @@ foreach ($keys as $key => $valore)
 </head>
 
 <body>
-    <ul>
-        <?php for ($i = 0; $i < count($keys); $i++) { ?>
-        <li>
-            <?php
-            $keys[$i]
-                ?>
-        </li>
-        <?php
-        }
-        ?>
-    </ul>
+
 </body>
 
 </html>
