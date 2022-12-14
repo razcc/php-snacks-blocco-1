@@ -24,6 +24,18 @@ $db = [
     ]
 ];
 
+
+$arrChiavi = array_keys($db);
+
+
+
+//     for ($k = 0; $k < count($db[$arrChiavi[$i]]); $k++) {
+//         echo ('<div class= "verde">');
+//         echo $db[$arrChiavi[$i]][$k]['name'];
+//         echo ('</div>');
+//     }
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -34,15 +46,28 @@ $db = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <ul>
-        <?php
-        ?>
-    </ul>
+    <?php for ($i = 0; $i < count($arrChiavi); $i++) { ?>
+
+    <?php if ($arrChiavi[$i] == 'teachers') { ?>
+
+    <div class="verde">
+
+        <?php for ($k = 0; $k < count($db[$arrChiavi[$i]]); $k++) {
+
+                echo $db[$arrChiavi[$i]][$k]['name'];
+
+
+            } ?>
+
+    </div>
+
+    <?php } ?>
+
+    <?php } ?>
 
 </body>
 
